@@ -4,6 +4,8 @@ const images = document.getElementsByClassName("image");
 let draggedElement = null;
 
 for(let i=0; i<images.length; i++){
+	
+	console.log(images[i]);
 	images[i].addEventListener("dragstart", (e) => {
 		draggedElement = e.target;
 	});
@@ -17,7 +19,7 @@ for(let i=0; i<images.length; i++){
 
 		 if (!draggedElement) {
 	        console.error("draggedElement is null");
-	        return;  // Prevents further errors
+	        return;
 		}
 		
 		let draggedBg = window.getComputedStyle(draggedElement).backgroundImage;

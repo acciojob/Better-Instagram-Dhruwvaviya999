@@ -4,8 +4,6 @@ const images = document.getElementsByClassName("image");
 let draggedElement = null;
 
 for(let i=0; i<images.length; i++){
-	
-	console.log(images[i]);
 	images[i].addEventListener("dragstart", (e) => {
 		draggedElement = e.target;
 		draggedElement.classList.add("selected");

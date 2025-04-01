@@ -8,10 +8,12 @@ for(let i=0; i<images.length; i++){
 	console.log(images[i]);
 	images[i].addEventListener("dragstart", (e) => {
 		draggedElement = e.target;
+		draggedElement.classList.add("selected");
 	});
 
 	images[i].addEventListener("dragover", (e) => {
 		e.preventDefault();
+		draggedElement.classList.add("selected");
 	});
 
 	images[i].addEventListener("drop", (e) => {
@@ -21,6 +23,7 @@ for(let i=0; i<images.length; i++){
 	        console.error("draggedElement is null");
 	        return;
 		}
+		draggedElement.classList.remove("selected");
 		
 		let draggedBg = window.getComputedStyle(draggedElement).backgroundImage;
 		let targetBg = window.getComputedStyle(e.target).backgroundImage;
